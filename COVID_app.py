@@ -50,6 +50,7 @@ _lock = RendererAgg.lock
 #                    layout='centered',
 #                    initial_sidebar_state='auto')
 #@st.cache(suppress_st_warning=True)
+st.sidebar.file_uploader("Upload file:")
 def plot_county(county):
     import numpy as np
     FIPSs = confirmed.groupby(['Province_State', 'Admin2']).FIPS.unique().apply(pd.Series).reset_index()
